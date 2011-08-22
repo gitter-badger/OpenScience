@@ -1,15 +1,8 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.0.rc6'
-
-# Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
-
 gem 'pg'
 
-
-# Gems used only for assets and not required
-# in production environments by default.
 group :assets do
   gem 'sass-rails', "  ~> 3.1.0.rc"
   gem 'coffee-rails', "~> 3.1.0.rc"
@@ -18,12 +11,41 @@ end
 
 gem 'jquery-rails'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+group :development do
+  # Better documentation
+  gem 'tomdoc', :require => false
 
-# Deploy with Capistrano
-# gem 'capistrano'
+  # Testing emails
+  gem 'mailcatcher', :require => false
 
-# To use debugger
-# gem 'ruby-debug19', :require => 'ruby-debug'
+  # Deployment
+  gem 'capistrano', :require => false
+  gem 'capistrano-ext', :require => false
+end
 
+group :development, :test do
+  gem 'ruby-debug19' if RUBY_VERSION.include? '1.9'
+
+  # Placed here so generators work
+  gem 'rspec-rails'
+  
+  # Opening webpages during tests
+  gem 'launchy'
+
+  # Testing Javascript
+  gem 'jasmine', '~> 1.1.0.rc2'
+end
+
+group :test do
+  # Core Testing
+  gem 'capybara', '~> 1.0.0'
+  gem 'fabrication'
+
+  # Test coverage
+  gem 'rcov', :require => false
+  
+  # Test feedback
+  gem 'autotest'
+  gem 'rspec-instafail', :require => false
+  gem 'fuubar'
+end
