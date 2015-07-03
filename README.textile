@@ -1,5 +1,7 @@
 h1. Open Science Project
 
+!https://badges.gitter.im/Join%20Chat.svg(Join the chat at https://gitter.im/enspiral/OpenScience)!:https://gitter.im/enspiral/OpenScience?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge
+
 h2. Data
 
 Example data files can be found at "this Github repository.":https://github.com/enspiral/open-source-science-data
